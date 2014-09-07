@@ -48,11 +48,11 @@
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="#">首页</a></li>
+						<li class="active"><a href="#" class="goto-main">首页</a></li>
 						<li><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown">语言 <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li class="disabled"><a href="#">Java</a></li>
+								<li ><a class="language-code" href="#module/language/Java.html">Java</a></li>
 								<li class="disabled"><a href="#">C</a></li>
 								<li class="disabled"><a href="#">Objective-C</a></li>
 								<li class="disabled"><a href="#">C++</a></li>
@@ -86,13 +86,7 @@
 			<!--/.container-fluid -->
 		</div>
 
-		<!-- Main component for a primary marketing message or call to action -->
-		<div class="jumbotron">
-			<h1>Hello World Home</h1>
-			<h3>All is hello world</h3>
-			<h3>所有的都是你好世界</h3>
-			<h3>All is about hello world</h3>
-			<h3>所有的都是关于你好世界</h3>
+		<div id="main">
 		</div>
 
 	</div>
@@ -105,5 +99,16 @@
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	
+	<script>
+		$(".goto-main").click(function() {
+			$("#main").load("module/home.html");
+		});
+		$(".goto-main").click();
+		$(".language-code").click(function(){
+			var url = $(this).attr("href").substr(1);
+			$("#main").get(url);
+		});
+	</script>
 </body>
 </html>
